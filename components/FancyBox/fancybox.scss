@@ -1,0 +1,814 @@
+$fancy-box-border-width: 2px;
+$fancy-box-frame-width: 28px;
+$fancy-box-border-color: #cfd3d7;
+$fancy-box-background-color: rgba(16, 49, 75, .65);
+
+$fancy-box-inner-shadow-dir: inset;
+$fancy-box-inner-shadow-x: 0;
+$fancy-box-inner-shadow-y: 0;
+$fancy-box-inner-shadow-blur: 10px;
+$fancy-box-inner-shadow-spread: 0;
+$fancy-box-inner-shadow-color: rgba(80, 118, 153, 1);
+$fancy-box-inner-shadow-vadd: 0;
+$fancy-box-inner-shadow-hadd: 0;
+
+$fancy-box-effect-width: 8px;
+$fancy-box-effect-color: #7da2ba;
+
+.fancy-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: none;
+  justify-content: stretch;
+  align-items: stretch;
+
+  .fancy-box-top {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: $fancy-box-frame-width;
+
+    .fancy-box-top-left {
+      flex-grow: 0;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+
+      width: $fancy-box-frame-width;
+      height: $fancy-box-frame-width;
+
+      &:before {
+        position: absolute;
+        content: '';
+        left: -$fancy-box-frame-width / 2 - 1;
+        top: -$fancy-box-frame-width / 2;
+
+        width: $fancy-box-frame-width * 2;
+        height: $fancy-box-frame-width * 2;
+
+        border: none;
+        border-left: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+        -webkit-transform: skew(-45deg);
+        -moz-transform: skew(-45deg);
+        -ms-transform: skew(-45deg);
+        -o-transform: skew(-45deg);
+        transform: skew(-45deg);
+        -webkit-transform-origin: left bottom;
+        -moz-transform-origin: left bottom;
+        -ms-transform-origin: left bottom;
+        -o-transform-origin: left bottom;
+        transform-origin: left bottom;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+      }
+    }
+
+    .fancy-box-top-center {
+      flex-grow: 1;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+
+      width: $fancy-box-frame-width;
+      height: $fancy-box-frame-width;
+
+      &:before {
+        position: absolute;
+        content: '';
+        left: -$fancy-box-frame-width;
+        top: 0;
+        right: -$fancy-box-frame-width;
+
+        border: none;
+        border-top: $fancy-box-border-width solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+
+        height: $fancy-box-frame-width * 2;
+      }
+    }
+
+    .fancy-box-top-right {
+      flex-grow: 0;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+
+      width: $fancy-box-frame-width;
+      height: $fancy-box-frame-width;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: -$fancy-box-frame-width / 2 - 1;
+        right: -$fancy-box-frame-width / 2;
+
+        border: none;
+        border-right: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+        -webkit-transform: skew(45deg);
+        -moz-transform: skew(45deg);
+        -ms-transform: skew(45deg);
+        -o-transform: skew(45deg);
+        transform: skew(45deg);
+        -webkit-transform-origin: right bottom;
+        -moz-transform-origin: right bottom;
+        -ms-transform-origin: right bottom;
+        -o-transform-origin: right bottom;
+        transform-origin: right bottom;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+
+        width: $fancy-box-frame-width * 2;
+        height: $fancy-box-frame-width * 2;
+      }
+    }
+
+    .fancy-box-top-effect {
+      position: absolute;
+      top: 0;
+      left: 115px;
+      right: 115px;
+
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      border: none;
+      padding: 0;
+
+      .fancy-box-top-effect-1 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: -1;
+          top: 0;
+
+          border: none;
+          border-left: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-top: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skew(45deg);
+          -moz-transform: skew(45deg);
+          -ms-transform: skew(45deg);
+          -o-transform: skew(45deg);
+          transform: skew(45deg);
+          -webkit-transform-origin: top left;
+          -moz-transform-origin: top left;
+          -ms-transform-origin: top left;
+          -o-transform-origin: top left;
+          transform-origin: top left;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-top-effect-2 {
+        flex-grow: 1;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: -$fancy-box-effect-width;
+          top: 0;
+          right: -$fancy-box-effect-width;
+
+          border: none;
+          border-bottom: $fancy-box-border-width solid $fancy-box-border-color;
+          border-top: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+
+          height: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-top-effect-3 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          right: -1;
+          top: 0;
+
+          border: none;
+          border-right: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-top: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skew(-45deg);
+          -moz-transform: skew(-45deg);
+          -ms-transform: skew(-45deg);
+          -o-transform: skew(-45deg);
+          transform: skew(-45deg);
+          -webkit-transform-origin: top right;
+          -moz-transform-origin: top right;
+          -ms-transform-origin: top right;
+          -o-transform-origin: top right;
+          transform-origin: top right;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+    }
+  }
+
+  .fancy-box-middle {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    min-height: 150px;
+
+    .fancy-box-middle-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+      width: $fancy-box-frame-width;
+      min-width: $fancy-box-frame-width;
+      max-width: $fancy-box-frame-width;
+
+      &:before {
+        flex-grow: 1;
+        position: absolute;
+        content: '';
+        top: -$fancy-box-frame-width;
+        left: 0;
+        bottom: -$fancy-box-frame-width;
+
+        border: none;
+        border-left: $fancy-box-border-width solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+
+        width: $fancy-box-frame-width * 2;
+      }
+    }
+
+    .fancy-box-middle-center {
+      flex-grow: 1;
+      display: flex;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: visible;
+      background-color: $fancy-box-background-color;
+      z-index: 10;
+    }
+
+    .fancy-box-middle-right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+      width: $fancy-box-frame-width;
+      min-width: $fancy-box-frame-width;
+      max-width: $fancy-box-frame-width;
+
+      &:before {
+        flex-grow: 1;
+        position: absolute;
+        content: '';
+        bottom: -$fancy-box-frame-width;
+        top: -$fancy-box-frame-width;
+        right: 0;
+
+        border: none;
+        border-right: $fancy-box-border-width solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+
+        width: $fancy-box-frame-width * 2;
+      }
+    }
+
+    .fancy-box-left-effect {
+      position: absolute;
+      top: 28px;
+      bottom: 0;
+      left: 0;
+
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      border: none;
+      padding: 0;
+
+      max-height: 100px;
+
+
+      .fancy-box-left-effect-1 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          top: -1;
+          left: 0;
+
+          border: none;
+          border-top: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-left: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skewY(45deg);
+          -moz-transform: skewY(45deg);
+          -ms-transform: skewY(45deg);
+          -o-transform: skewY(45deg);
+          transform: skewY(45deg);
+          -webkit-transform-origin: top left;
+          -moz-transform-origin: top left;
+          -ms-transform-origin: top left;
+          -o-transform-origin: top left;
+          transform-origin: top left;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-left-effect-2 {
+        flex-grow: 1;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: 0;
+          top: -$fancy-box-effect-width;
+          bottom: -$fancy-box-effect-width;
+
+          border: none;
+          border-left: $fancy-box-border-width solid $fancy-box-border-color;
+          border-right: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+
+          width: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-left-effect-3 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: 0;
+          bottom: -1;
+
+          border: none;
+          border-bottom: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-left: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skewY(-45deg);
+          -moz-transform: skewY(-45deg);
+          -ms-transform: skewY(-45deg);
+          -o-transform: skewY(-45deg);
+          transform: skewY(-45deg);
+          -webkit-transform-origin: bottom left;
+          -moz-transform-origin: bottom left;
+          -ms-transform-origin: bottom left;
+          -o-transform-origin: bottom left;
+          transform-origin: bottom left;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+    }
+
+    .fancy-box-right-effect {
+      position: absolute;
+      top: 28px;
+      right: 0;
+      bottom: 0;
+
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      border: none;
+      padding: 0;
+
+      max-height: 100px;
+
+      .fancy-box-right-effect-1 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          top: -1;
+          right: 0;
+
+          border: none;
+          border-top: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-right: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skewY(-45deg);
+          -moz-transform: skewY(-45deg);
+          -ms-transform: skewY(-45deg);
+          -o-transform: skewY(-45deg);
+          transform: skewY(-45deg);
+          -webkit-transform-origin: top right;
+          -moz-transform-origin: top right;
+          -ms-transform-origin: top right;
+          -o-transform-origin: top right;
+          transform-origin: top right;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-right-effect-2 {
+        flex-grow: 1;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          right: 0;
+          top: -$fancy-box-effect-width;
+          bottom: -$fancy-box-effect-width;
+
+          border: none;
+          border-left: $fancy-box-border-width solid $fancy-box-border-color;
+          border-right: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+
+          width: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-right-effect-3 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          right: 0;
+          bottom: -1;
+
+          border: none;
+          border-bottom: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-right: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skewY(45deg);
+          -moz-transform: skewY(45deg);
+          -ms-transform: skewY(45deg);
+          -o-transform: skewY(45deg);
+          transform: skewY(45deg);
+          -webkit-transform-origin: bottom right;
+          -moz-transform-origin: bottom right;
+          -ms-transform-origin: bottom right;
+          -o-transform-origin: bottom right;
+          transform-origin: bottom right;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+    }
+  }
+
+  .fancy-box-bottom {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: $fancy-box-frame-width;
+
+    .fancy-box-bottom-left {
+      flex-grow: 0;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+
+      width: $fancy-box-frame-width;
+      height: $fancy-box-frame-width;
+
+      &:before {
+        position: absolute;
+        content: '';
+        left: -$fancy-box-frame-width / 2 - 1;
+        top: -$fancy-box-frame-width / 2 - 0;
+
+        border: none;
+        border-left: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+        -webkit-transform: skew(45deg);
+        -moz-transform: skew(45deg);
+        -ms-transform: skew(45deg);
+        -o-transform: skew(45deg);
+        transform: skew(45deg);
+        -webkit-transform-origin: top left;
+        -moz-transform-origin: top left;
+        -ms-transform-origin: top left;
+        -o-transform-origin: top left;
+        transform-origin: top left;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+
+        width: $fancy-box-frame-width * 2;
+        height: $fancy-box-frame-width * 2;
+      }
+    }
+
+    .fancy-box-bottom-center {
+      flex-grow: 1;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+
+      width: $fancy-box-frame-width;
+      height: $fancy-box-frame-width;
+
+      &:before {
+        position: absolute;
+        content: '';
+        left: -$fancy-box-frame-width;
+        bottom: 0;
+        right: -$fancy-box-frame-width;
+
+        border: none;
+        border-bottom: $fancy-box-border-width solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur + $fancy-box-inner-shadow-vadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+
+        height: $fancy-box-frame-width * 2;
+      }
+    }
+
+    .fancy-box-bottom-right {
+      flex-grow: 0;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+
+      width: $fancy-box-frame-width;
+      height: $fancy-box-frame-width;
+
+      &:before {
+        position: absolute;
+        content: '';
+        right: -$fancy-box-frame-width / 2 - 1;
+        top: -$fancy-box-frame-width / 2;
+
+        border: none;
+        border-right: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+        background-color: $fancy-box-background-color;
+        -webkit-transform: skew(-45deg);
+        -moz-transform: skew(-45deg);
+        -ms-transform: skew(-45deg);
+        -o-transform: skew(-45deg);
+        transform: skew(-45deg);
+        -webkit-transform-origin: top right;
+        -moz-transform-origin: top right;
+        -ms-transform-origin: top right;
+        -o-transform-origin: top right;
+        transform-origin: top right;
+
+        -webkit-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        -moz-box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+        box-shadow: $fancy-box-inner-shadow-dir $fancy-box-inner-shadow-x $fancy-box-inner-shadow-y $fancy-box-inner-shadow-blur - $fancy-box-inner-shadow-hadd $fancy-box-inner-shadow-spread $fancy-box-inner-shadow-color;
+
+        width: $fancy-box-frame-width * 2;
+        height: $fancy-box-frame-width * 2;
+      }
+    }
+
+    .fancy-box-bottom-effect {
+      position: absolute;
+      bottom: 0;
+      left: 150px;
+      right: 150px;
+
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      border: none;
+      padding: 0;
+
+      .fancy-box-bottom-effect-1 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: -1;
+          bottom: 0;
+
+          border: none;
+          border-left: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-bottom: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skew(-45deg);
+          -moz-transform: skew(-45deg);
+          -ms-transform: skew(-45deg);
+          -o-transform: skew(-45deg);
+          transform: skew(-45deg);
+          -webkit-transform-origin: bottom left;
+          -moz-transform-origin: bottom left;
+          -ms-transform-origin: bottom left;
+          -o-transform-origin: bottom left;
+          transform-origin: bottom left;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-bottom-effect-2 {
+        flex-grow: 1;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: -$fancy-box-effect-width;
+          bottom: 0;
+          right: -$fancy-box-effect-width;
+
+          border: none;
+          border-bottom: $fancy-box-border-width solid $fancy-box-border-color;
+          border-top: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+
+          height: $fancy-box-effect-width;
+        }
+      }
+
+      .fancy-box-bottom-effect-3 {
+        flex-grow: 0;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        width: $fancy-box-effect-width;
+        height: $fancy-box-effect-width;
+
+        &:before {
+          position: absolute;
+          content: '';
+          right: -1;
+          top: 0;
+
+          border: none;
+          border-right: $fancy-box-border-width + 1 solid $fancy-box-border-color;
+          border-bottom: $fancy-box-border-width solid $fancy-box-border-color;
+          background-color: $fancy-box-effect-color;
+          -webkit-transform: skew(45deg);
+          -moz-transform: skew(45deg);
+          -ms-transform: skew(45deg);
+          -o-transform: skew(45deg);
+          transform: skew(45deg);
+          -webkit-transform-origin: bottom right;
+          -moz-transform-origin: bottom right;
+          -ms-transform-origin: bottom right;
+          -o-transform-origin: bottom right;
+          transform-origin: bottom right;
+
+          width: $fancy-box-effect-width;
+          height: $fancy-box-effect-width;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+    background: rgb(255, 255, 255);
+    display: none;
+}
+
+.overlay.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay h6 {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #d23a2a;
+}
+
+.overlay .fa {
+    font-size: 50px;
+    color: gray;
+}
+
+.overlay h3 {
+    color: gray;
+}
+
+.overlay .loading-providers span {
+    font-size: 13px;
+    color: #d23a2a;
+}
+
+.overlay .loading-providers .fa {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.overlay .loading-providers h4 {
+    color: #d23a2a;
+}
+
+.overlay .loading-providers .loaded * {
+    color: green !important;
+}
+
+.side-bar .overlay h3 {
+    font-size: 15px;
+}
+
+.fa-spin-custom, .glyphicon-spin {
+    -webkit-animation: spin 3000ms infinite linear;
+    animation: spin 3000ms infinite linear;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
